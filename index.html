@@ -2,184 +2,345 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/images/favicon.png"> <!-- Add this line for the favicon -->
-    <link rel="stylesheet" href="style.css" />
-    <title>Ved's Portfolio</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+  <link rel="stylesheet" href="style.css" />
+  <title>Ved's Portfolio</title>
+
+  <style>
+    /* ===== Timeline Section Styles ===== */
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 100px auto;
+    }
+
+    .timeline::after {
+      content: "";
+      position: absolute;
+      width: 6px;
+      background-color: var(--main-color, #00bcd4);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+      border-radius: 6px;
+    }
+
+    .timeline-item {
+      padding: 15px 40px;
+      position: relative;
+      width: 50%;
+    }
+
+    .timeline-item.left {
+      left: 0;
+    }
+
+    .timeline-item.right {
+      left: 50%;
+    }
+
+    .timeline-content {
+      background-color: var(--second-bg-color, #1e1e1e);
+      color: #fff;
+      padding: 25px 30px;
+      border-radius: 12px;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .timeline-content:hover {
+      transform: scale(1.03);
+    }
+
+    .timeline-item.left::before {
+      content: " ";
+      position: absolute;
+      top: 20px;
+      right: -12px;
+      border: 6px solid transparent;
+      border-left-color: var(--second-bg-color, #1e1e1e);
+    }
+
+    .timeline-item.right::before {
+      content: " ";
+      position: absolute;
+      top: 20px;
+      left: -12px;
+      border: 6px solid transparent;
+      border-right-color: var(--second-bg-color, #1e1e1e);
+    }
+
+    .timeline-content h3 {
+      font-size: 1.4rem;
+      color: var(--main-color, #00bcd4);
+      margin-bottom: 5px;
+    }
+
+    .timeline-content h4 {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-bottom: 12px;
+    }
+
+    .timeline-content ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .timeline-content li {
+      font-size: 1rem;
+      color: #ddd;
+      line-height: 1.6;
+      margin-bottom: 6px;
+      list-style-type: disc;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .timeline::after {
+        left: 31px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+
+      .timeline-item.right {
+        left: 0%;
+      }
+
+      .timeline-item.left::before,
+      .timeline-item.right::before {
+        left: 60px;
+        border: 6px solid transparent;
+        border-left-color: var(--second-bg-color, #1e1e1e);
+      }
+    }
+  </style>
 </head>
 
-<header class="header">
+<body>
+
+  <header class="header">
     <a href="#home" class="logo">Portfolio</a>
 
     <i class='bx bx-menu' id="menu-icon"></i>
 
     <nav class="navbar">
-        <a href="#home" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#portfolio">Projects</a>
-        <a href="#contact">Contact</a>
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#portfolio">Projects</a>
+      <a href="#timeline">Experience</a>
+      <a href="#contact">Contact</a>
     </nav>
-</header>
+  </header>
 
-<!-- home section design -->
-
-<section class="home" id="home">
+  <!-- home section -->
+  <section class="home" id="home">
     <div class="home-content">
-        <h1>I'm a <span> Web Developer</span></h1><br>
-        <h3>Hi, I'm Ved Chaudhari A passionate Developer based in Mumbai India. 📍</h3>
+      <h1>I'm a <span>Node.js Developer</span></h1><br>
+      <h3>Hi, I'm Ved Chaudhari — a passionate Backend Developer based in Mumbai, India. 📍</h3>
 
-        <div class="social-media">
-            <a href="https://github.com/vedchaudhari"><i class='bx bxl-github'></i></a>
-            <a href="https://www.instagram.com/vedchaudhari__07/"><i class='bx bxl-instagram-alt'></i></a>
-            <a href="https://www.linkedin.com/in/ved-chaudhari-b0b3a5213/"><i class='bx bxl-linkedin'></i></a>
-            <a href="https://medium.com/@a107vedchaudhari"><i class='bx bxl-medium'></i></a>
-        </div>
+      <div class="social-media">
+        <a href="https://github.com/ved-chaudhari"><i class='bx bxl-github'></i></a>
+        <a href="https://www.linkedin.com/in/ved-chaudhari-b0b3a5213/"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://leetcode.com/codybuddy"><i class='bx bx-code'></i></a>
+        <a href="mailto:vedc2853@gmail.com"><i class='bx bxl-gmail'></i></a>
+      </div>
 
-        <a href="https://ivory-kelsey-57.tiiny.site" class="btn" target="_blank">Download CV</a>
-
+      <a href="https://ivory-kelsey-57.tiiny.site" class="btn" target="_blank">Download CV</a>
     </div>
     <div class="home-img">
-        <img src="images/ved.jpeg" alt="">
+      <img src="images/ved.jpeg" alt="Ved Chaudhari">
     </div>
-</section>
+  </section>
 
-<!-- about section design -->
-<section class="about" id="about">
+  <!-- about section -->
+  <section class="about" id="about">
     <div class="about-img">
-        <img src="images/about.webp" alt="">
+      <img src="images/about.webp" alt="">
     </div>
 
     <div class="about-content">
-        <h2 class="heading">About <span>Me</span></h2>
-        <h3>Frontend Developer!</h3>
-        <p>As a skilled Web Developer, I bring a robust set of abilities to the table, including proficiency in HTML, CSS, JavaScript, and React. My strength lies in creating and upkeeping responsive websites that ensure seamless user interactions. I specialize in fashioning dynamic and captivating user interfaces by composing clean and well-optimized code, and I make effective use of the latest development tools and methodologies. Additionally, I thrive as a team player, actively collaborating with cross-functional teams to deliver exceptional web applications</p>
-        <a href="#" class="btn">Read More</a>
+      <h2 class="heading">About <span>Me</span></h2>
+      <h3>Backend Developer!</h3>
+      <p>
+        I’m a passionate <b>Node.js Developer</b> specializing in building real-time and scalable backend systems.
+        Currently working at <b>Wharf Street Strategies</b>, I’ve contributed to multiple in-house products like <b>Eat</b>, <b>Ride</b>, and <b>ConnectUp</b>.
+        My work involves designing high-performance APIs, optimizing latency, and integrating robust payment and communication features.
+        <br><br>
+        I’ve worked extensively with <b>Socket.IO</b>, <b>Redis</b>, <b>MongoDB ODM</b>, and <b>Razorpay Webhooks</b> to ensure reliable performance.
+        I’m also active on <b>LeetCode</b>, having solved 150+ problems using C++, constantly improving my problem-solving skills.
+      </p>
+      <a href="#skills" class="btn">Explore Skills</a>
     </div>
-</section>
+  </section>
 
-<!-- skills section design -->
-<section class="skills" id="skills">
-    <h2 class="heading"> <span>Skills</span></h2>
+  <!-- skills section -->
+  <section class="skills" id="skills">
+    <h2 class="heading"><span>Skills</span></h2>
 
     <div class="skills-container">
-        <div class="skills-box">
-            <i class='bx bx-code'></i>
-            <h3>Programming Languges</h3>
-            <p>Java | C++ | Python</p>
+      <div class="skills-box">
+        <i class='bx bx-code'></i>
+        <h3>Programming Languages</h3>
+        <p>JavaScript (ES6+), TypeScript, C++</p>
+      </div>
 
+      <div class="skills-box">
+        <i class='bx bx-server'></i>
+        <h3>Backend Development</h3>
+        <p>Node.js, Express.js, Socket.IO, RESTful APIs, Jest</p>
+      </div>
 
-            <a href="#" class="btn">Read More</a>
-        </div>
+      <div class="skills-box">
+        <i class='bx bx-data'></i>
+        <h3>Databases & Tools</h3>
+        <p>MongoDB, Mongoose (ODM), Redis, BullMQ, Docker</p>
+      </div>
 
-        <div class="skills-box">
-            <i class='bx bx-code-alt'></i>
-            <h3>Web Development</h3>
-            <p>HTML | CSS | JS | React | Wordpress<br> MySQL</p>
-
-
-            <a href="#" class="btn">Read More</a>
-        </div>
-
-        <div class="skills-box">
-            <i class='bx bxs-paint'></i>
-            <h3>Machine learning</h3>
-            <p>Python | Flask | Tensorflow <br> | Numpy | OpenCV </p>
-
-            <a href="#" class="btn">Read More</a>
-        </div>
-
-        <div class="skills-box">
-            <i class='bx bx-bar-chart-alt'></i>
-            <h3>Blockchain</h3>
-            <p>Solidity | Ganache | Truffle <br> Ethereum | Metamask</p>
-
-            <a href="#" class="btn">Read More</a>
-        </div>
-
+      <div class="skills-box">
+        <i class='bx bx-credit-card'></i>
+        <h3>Integrations</h3>
+        <p>Razorpay Webhooks, Payment Gateway APIs, API Optimization</p>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- Portfolio section design -->
-
-<section class="portfolio" id="portfolio">
-    <h2 class="heading">Latest <span>Project</span></h2>
+  <!-- Projects -->
+  <section class="portfolio" id="portfolio">
+    <h2 class="heading">Latest <span>Projects</span></h2>
 
     <div class="portfolio-container">
-        <div class="portfolio-box">
-            <img src="images/Chatbot.webp" alt="">
-            <div class="portfolio-layer">
-                <h4>ChatBot</h4>
-                <p>ChatBot for College related queries management</p>
-                <a href="https://github.com/vedchaudhari/ChatBot"><i class='bx bx-link-external'></i></a>
-            </div>
+      <div class="portfolio-box">
+        <img src="images/chat.webp" alt="">
+        <div class="portfolio-layer">
+          <h4>Real-Time Chat Application</h4>
+          <p>Full-stack chat app with real-time messaging using Socket.IO and JWT authentication.</p>
+          <a href="https://convochat-app.onrender.com"><i class='bx bx-link-external'></i></a>
         </div>
+      </div>
 
-        <div class="portfolio-box">
-            <img src="images/E-commerce.webp" alt="">
-            <div class="portfolio-layer">
-                <h4>E-Commerce</h4>
-                <p>e-commerce website front end UI</p>
-                <div>
-                    <a href="https://ved-ecommerce.netlify.app/"><i class='bx bx-link-external'></i></a>
-                    <a href="https://github.com/vedchaudhari/E-commerce"><i class='bx bxl-github'></i></a>
-                </div>
-
-            </div>
+      <div class="portfolio-box">
+        <img src="images/E-commerce.webp" alt="">
+        <div class="portfolio-layer">
+          <h4>E-Commerce Website</h4>
+          <p>Fully responsive e-commerce website built with React and Tailwind CSS.</p>
+          <div>
+            <a href="https://ved-ecommerce.netlify.app/"><i class='bx bx-link-external'></i></a>
+            <a href="https://github.com/ved-chaudhari/E-commerce"><i class='bx bxl-github'></i></a>
+          </div>
         </div>
+      </div>
 
-        <div class="portfolio-box">
-            <img src="images/chat.webp" alt="">
-            <div class="portfolio-layer">
-                <h4>Web3.0 Chat App</h4>
-                <p>Blockchain based technology secured chat application</p>
-                <a href="https://github.com/vedchaudhari/Secure-Business-Communication-Using-Blockchain"><i
-                        class='bx bx-link-external'></i></a>
-            </div>
+      <div class="portfolio-box">
+        <img src="images/blockchain.webp" alt="">
+        <div class="portfolio-layer">
+          <h4>Web3 Secure Chat</h4>
+          <p>Blockchain-based decentralized chat app using Solidity, Next.js, and MetaMask authentication.</p>
+          <a href="https://github.com/ved-chaudhari/Secure-Business-Communication-Using-Blockchain"><i class='bx bx-link-external'></i></a>
         </div>
-
-
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- contact section design -->
-<section class="contact" id="contact">
+  <!-- Career Timeline -->
+  <section class="timeline" id="timeline">
+    <h2 class="heading">Career <span>Timeline</span></h2>
+
+    <div class="timeline-item left">
+      <div class="timeline-content">
+        <h3>Node.js Intern – Wharf Street Studios</h3>
+        <h4>Jan 2024 – Apr 2024</h4>
+        <ul>
+          <li>Developed in-game inbox selection enabling clan leader announcements using <b>Socket.IO</b>.</li>
+          <li>Utilized <b>MongoDB ODM</b> for chat data persistence and optimized query handling.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="timeline-content">
+        <h3>Node.js Developer – Wharf Street Strategies</h3>
+        <h4>Apr 2024 – Present</h4>
+        <ul>
+          <li>Built MVPs for <b>Eat</b> and <b>Ride</b> apps with <b>WebSocket-driven</b> communication modules.</li>
+          <li>Developed chat module for <b>ConnectUp</b> (LMS) using <b>Socket.IO</b> for real-time messaging.</li>
+          <li>Integrated <b>Razorpay Webhooks</b> for payment verification and transaction logging.</li>
+          <li>Wrote <b>unit tests</b> using Jest for backend modules to ensure system reliability.</li>
+          <li>Optimized backend performance using <b>Redis caching</b> and <b>BullMQ queues</b>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item left">
+      <div class="timeline-content">
+        <h3>Personal Projects & Growth</h3>
+        <h4>2023 – Present</h4>
+        <ul>
+          <li>Developed full-stack apps like <b>ConvoChat</b> (Real-Time Chat App) and <b>Ved E-Commerce</b>.</li>
+          <li>Built a decentralized Web3 Chat using <b>Solidity</b>, <b>Next.js</b>, and <b>MetaMask</b>.</li>
+          <li>Solved <b>150+</b> LeetCode problems using <b>C++</b> to strengthen DSA and problem-solving skills.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact section -->
+  <section class="contact" id="contact">
     <h2 class="heading">Contact <span>Me!</span></h2>
 
     <form action="#">
-        <div class="input-box">
-            <input type="text" placeholder="Full Name">
-            <input type="text" placeholder="Email Address">
-        </div>
-        <div class="input-box">
-            <input type="number" placeholder="Mobile Number">
-            <input type="text" placeholder="Email Subject">
-        </div>
-        <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-        <input type="submit" value="Send Message" class="btn">
+      <div class="input-box">
+        <input type="text" placeholder="Full Name">
+        <input type="text" placeholder="Email Address">
+      </div>
+      <div class="input-box">
+        <input type="number" placeholder="Mobile Number">
+        <input type="text" placeholder="Subject">
+      </div>
+      <textarea cols="30" rows="10" placeholder="Your Message"></textarea>
+      <input type="submit" value="Send Message" class="btn">
     </form>
-</section>
+  </section>
 
-<!-- footer design  -->
-<footer class="footer">
+  <!-- footer -->
+  <footer class="footer">
     <div class="footer-text">
-        <p>Copyright &copy; 2023 by Ved | All Rights Reserved</p>
+      <p>Copyright &copy; 2025 by Ved Chaudhari | All Rights Reserved</p>
     </div>
 
     <div class="footer-iconTop">
-        <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+      <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
     </div>
-</footer>
+  </footer>
 
-<script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    /* ===== ScrollReveal Animations ===== */
+    ScrollReveal({
+      reset: false,
+      distance: '60px',
+      duration: 1200,
+      delay: 200
+    });
 
-<script src="script.js"></script>
+    ScrollReveal().reveal('.timeline-item.left', { origin: 'left' });
+    ScrollReveal().reveal('.timeline-item.right', { origin: 'right' });
+    ScrollReveal().reveal('.heading', { origin: 'top' });
+  </script>
 
 </body>
-
 </html>
